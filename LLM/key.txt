@@ -1,0 +1,13 @@
+API:
+http://agent.tongji.edu.cn/api/proxy/api/v1
+
+APPID:
+cscc9fqg4n16dckacgng
+
+key: 
+csccadqg4n16dckacgp0
+
+
+Kimi：
+sk-6SPxtFoADCQXHRVo9kkxFBBwLCbpHiKyC5gqUgLekriuvPiU
+sk-Q3uSnqm43MJtFlnyqlmIw5rmUOmWx5otcKGm6fpgXmoDXq7Z
