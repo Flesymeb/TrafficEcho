@@ -73,7 +73,7 @@ def analyze_text_for_keywords_and_evaluation(json_input, index):
 def format_keywords_output(data):
     formatted_result = {
         "keywords": [],  # 将存储所有关键词的列表
-        "summary": data.get("summary_description", ""),  # 获取总结描述
+        "summary": data.get("summary", ""),  # 获取总结描述
     }
 
     # 确保数据中包含关键词

@@ -1,0 +1,261 @@
+[
+    {
+        "keywords": [
+            {
+                "keyword": "洛杉矶",
+                "category": "地点",
+                "weight": 0.8
+            },
+            {
+                "keyword": "租车",
+                "category": "服务",
+                "weight": 0.7
+            },
+            {
+                "keyword": "特斯拉 Model 3",
+                "category": "车型",
+                "weight": 0.9
+            },
+            {
+                "keyword": "FSD",
+                "category": "功能",
+                "weight": 0.6
+            },
+            {
+                "keyword": "车流量",
+                "category": "交通",
+                "weight": 0.5
+            },
+            {
+                "keyword": "堵车",
+                "category": "效率",
+                "weight": 0.4
+            },
+            {
+                "keyword": "北京",
+                "category": "地点",
+                "weight": 0.7
+            },
+            {
+                "keyword": "适应",
+                "category": "舒适度",
+                "weight": 0.6
+            }
+        ],
+        "summary": ""
+    },
+    {
+        "keywords": [
+            {
+                "keyword": "反光镜",
+                "category": "车辆损伤",
+                "weight": 0.7
+            },
+            {
+                "keyword": "车",
+                "category": "交通拥堵",
+                "weight": 0.8
+            },
+            {
+                "keyword": "路边",
+                "category": "处理方式",
+                "weight": 0.6
+            },
+            {
+                "keyword": "整条路",
+                "category": "交通拥堵",
+                "weight": 0.9
+            },
+            {
+                "keyword": "堵",
+                "category": "交通效率",
+                "weight": 1.0
+            }
+        ],
+        "summary": ""
+    },
+    {
+        "keywords": [
+            {
+                "keyword": "番海大桥",
+                "category": "地理位置",
+                "weight": 0.8
+            },
+            {
+                "keyword": "堵车",
+                "category": "交通效率",
+                "weight": 0.9
+            },
+            {
+                "keyword": "红绿灯",
+                "category": "交通设施",
+                "weight": 0.7
+            },
+            {
+                "keyword": "排长龙",
+                "category": "交通拥堵",
+                "weight": 0.6
+            },
+            {
+                "keyword": "20分钟以上",
+                "category": "等待时间",
+                "weight": 0.5
+            }
+        ],
+        "summary": ""
+    },
+    {
+        "keywords": [
+            {
+                "keyword": "大雾",
+                "category": "天气影响",
+                "weight": 0.8
+            },
+            {
+                "keyword": "高速封了",
+                "category": "交通管制",
+                "weight": 0.7
+            },
+            {
+                "keyword": "下道堵车",
+                "category": "交通拥堵",
+                "weight": 0.6
+            },
+            {
+                "keyword": "吉吉国王",
+                "category": "个人情绪",
+                "weight": 0.5
+            },
+            {
+                "keyword": "小付",
+                "category": "个人助手",
+                "weight": 0.4
+            },
+            {
+                "keyword": "航班",
+                "category": "交通方式",
+                "weight": 0.7
+            },
+            {
+                "keyword": "温州中转",
+                "category": "行程安排",
+                "weight": 0.6
+            },
+            {
+                "keyword": "慢羊羊",
+                "category": "个人情绪",
+                "weight": 0.5
+            },
+            {
+                "keyword": "温州龙湾国际机场",
+                "category": "地点",
+                "weight": 0.8
+            }
+        ],
+        "summary": ""
+    },
+    {
+        "keywords": [
+            {
+                "keyword": "",
+                "category": "未分类",
+                "weight": 0.8
+            },
+            {
+                "keyword": "",
+                "category": "未分类",
+                "weight": 0.7
+            },
+            {
+                "keyword": "",
+                "category": "未分类",
+                "weight": 0.9
+            },
+            {
+                "keyword": "",
+                "category": "未分类",
+                "weight": 0.6
+            },
+            {
+                "keyword": "",
+                "category": "未分类",
+                "weight": 0.5
+            },
+            {
+                "keyword": "",
+                "category": "未分类",
+                "weight": 0.4
+            },
+            {
+                "keyword": "",
+                "category": "未分类",
+                "weight": 0.3
+            }
+        ],
+        "summary": "用户首次在美国洛杉矶租车体验了特斯拉Model 3，与北京相比，洛杉矶的驾驶体验较为简单，尽管存在车流量大和堵车情况，但用户很快适应。"
+    },
+    {
+        "keywords": [
+            {
+                "keyword": "",
+                "category": "车辆损坏",
+                "weight": 0.8
+            },
+            {
+                "keyword": "",
+                "category": "交通效率",
+                "weight": 0.7
+            },
+            {
+                "keyword": "",
+                "category": "事故处理",
+                "weight": 0.6
+            },
+            {
+                "keyword": "",
+                "category": "交通路线",
+                "weight": 0.5
+            }
+        ],
+        "summary": "文本表达了对车辆轻微损伤导致交通拥堵的不满，强调了事故处理对交通效率的影响。"
+    },
+    {
+        "keywords": [
+            {
+                "keyword": "番海大桥",
+                "category": "地理位置",
+                "weight": 0.8
+            },
+            {
+                "keyword": "堵车",
+                "category": "交通效率",
+                "weight": 0.9
+            },
+            {
+                "keyword": "红绿灯",
+                "category": "交通管理",
+                "weight": 0.7
+            },
+            {
+                "keyword": "排长龙",
+                "category": "交通拥堵",
+                "weight": 0.6
+            },
+            {
+                "keyword": "20分钟以上",
+                "category": "等待时间",
+                "weight": 0.5
+            },
+            {
+                "keyword": "讽刺",
+                "category": "情绪表达",
+                "weight": 0.4
+            }
+        ],
+        "summary": "用户抱怨番海大桥交通拥堵严重，红绿灯管理不当导致长时间排队，对交通效率和情绪产生负面影响。"
+    },
+    {
+        "error": "Error code: 429 - {'error': {'message': 'Your account cns73hcudu6b16gngvn0<ak-eweem9dogtpi11bti691> request reached max request: 3, please try again after 1 seconds', 'type': 'rate_limit_reached_error'}}",
+        "index": 4
+    }
+]
