@@ -71,7 +71,12 @@ def analyze_text_for_keywords_and_evaluation(json_input, index):
 
 # 将返回结果格式化为期望的结构
 def format_keywords_output(data):
-    formatted_result = {"keywords": []}
+    formatted_result = {
+        "keywords": [],  # 将存储所有关键词的列表
+        "summary": data.get("summary_description", ""),  # 获取总结描述
+    }
+
+    # 确保数据中包含关键词
     if "keywords" in data:
         for keyword_entry in data["keywords"]:
             formatted_result["keywords"].append(
@@ -79,10 +84,26 @@ def format_keywords_output(data):
                     "keyword": keyword_entry.get("keyword", ""),
                     "category": keyword_entry.get("category", "未分类"),
                     "weight": keyword_entry.get("weight", 0),
-                    "description": keyword_entry.get("description", ""),
+                    # "description": keyword_entry.get("description", ""),
                 }
             )
     return formatted_result
+
+
+# def format_keywords_output(data):
+#     formatted_result = {"keywords": []}
+
+#     if "keywords" in data:
+#         for keyword_entry in data["keywords"]:
+#             formatted_result["keywords"].append(
+#                 {
+#                     "keyword": keyword_entry.get("keyword", ""),
+#                     "category": keyword_entry.get("category", "未分类"),
+#                     "weight": keyword_entry.get("weight", 0),
+#                     # "description": keyword_entry.get("description", ""),
+#                 }
+#             )
+#     return formatted_result
 
 
 # 记录无效响应到日志
