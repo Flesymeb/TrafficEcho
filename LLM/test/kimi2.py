@@ -70,12 +70,14 @@ def write_output_to_file(output, output_filename):
 
 
 # 示例输入：从文件读取JSON格式数据
-filename = "weibo_20241025.json"  # 这里替换为你的JSON文件名
+# filename = "weibo_20241025.json"  # 这里替换为你的JSON文件名
+
+filename = "堵车.json"
 json_data = read_json_file(filename)
 
 # 调用函数并打印结果
 result = analyze_text_for_keywords_and_evaluation(json.dumps(json_data))
-# print(result)
+print(result)
 
 # 将结果输出到文件
 output_filename = f"{os.path.splitext(filename)[0]}_output.json"  # 创建输出文件名

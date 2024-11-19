@@ -1,0 +1,114 @@
+[
+    {
+        "keywords": [
+            {
+                "keyword": "洛杉矶",
+                "category": "地点",
+                "weight": 0.8,
+                "description": ""
+            },
+            {
+                "keyword": "租车",
+                "category": "服务",
+                "weight": 0.7,
+                "description": ""
+            },
+            {
+                "keyword": "特斯拉 Model 3",
+                "category": "车型",
+                "weight": 0.9,
+                "description": ""
+            },
+            {
+                "keyword": "FSD",
+                "category": "技术特性",
+                "weight": 0.6,
+                "description": ""
+            },
+            {
+                "keyword": "车流量",
+                "category": "交通状况",
+                "weight": 0.5,
+                "description": ""
+            },
+            {
+                "keyword": "堵车",
+                "category": "交通状况",
+                "weight": 0.6,
+                "description": ""
+            },
+            {
+                "keyword": "北京",
+                "category": "地点",
+                "weight": 0.4,
+                "description": ""
+            },
+            {
+                "keyword": "适应",
+                "category": "个人体验",
+                "weight": 0.5,
+                "description": ""
+            }
+        ]
+    },
+    {
+        "keywords": [
+            {
+                "keyword": "",
+                "category": "车辆状况",
+                "weight": 0.7,
+                "description": ""
+            },
+            {
+                "keyword": "",
+                "category": "交通效率",
+                "weight": 0.8,
+                "description": ""
+            },
+            {
+                "keyword": "",
+                "category": "事故处理",
+                "weight": 0.6,
+                "description": ""
+            }
+        ]
+    },
+    {
+        "keywords": [
+            {
+                "keyword": "番海大桥",
+                "category": "地点",
+                "weight": 0.8,
+                "description": ""
+            },
+            {
+                "keyword": "堵车",
+                "category": "效率",
+                "weight": 0.9,
+                "description": ""
+            },
+            {
+                "keyword": "红绿灯",
+                "category": "效率",
+                "weight": 0.7,
+                "description": ""
+            },
+            {
+                "keyword": "长龙",
+                "category": "效率",
+                "weight": 0.6,
+                "description": ""
+            },
+            {
+                "keyword": "20分钟以上",
+                "category": "效率",
+                "weight": 0.5,
+                "description": ""
+            }
+        ]
+    },
+    {
+        "error": "Error code: 429 - {'error': {'message': 'Your account cns73hcudu6b16gngvn0<ak-eweem9dogtpi11bti691> request reached max request: 3, please try again after 1 seconds', 'type': 'rate_limit_reached_error'}}",
+        "index": 4
+    }
+]

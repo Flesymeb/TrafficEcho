@@ -29,7 +29,7 @@ def analyze_text_for_keywords_and_evaluation(json_input):
 - Role: 数据分析专家和自然语言处理工程师
 - Background: 用户需要从JSON格式的数据中提取与交通出行相关的关键词，并自动分析评价的具体方面（如舒适度、效率等），并为每个关键词分配权重。
 - Goals: 从文本中自动提取关键词，基于上下文发掘评价指标，并分配权重。
-- OutputFormat: 以JSON格式输出关键词、评价类别、权重及相关描述。
+- OutputFormat: 以JSON格式输出关键词、评价类别、权重及总结描述，尽量简介。
 - Workflow:
   1. 解析用户提供的JSON数据，提取包含文本信息的部分。
   2. 使用NLP技术提取关键词（如TF-IDF、TextRank或BERT）。
