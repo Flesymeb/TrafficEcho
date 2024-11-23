@@ -1,0 +1,112 @@
+[
+    {
+        "keywords": [
+            {
+                "keyword": "洛杉矶",
+                "category": "地理位置",
+                "weight": 0.3
+            },
+            {
+                "keyword": "租车",
+                "category": "交通方式",
+                "weight": 0.2
+            },
+            {
+                "keyword": "FSD",
+                "category": "车辆功能",
+                "weight": 0.15
+            },
+            {
+                "keyword": "Model 3",
+                "category": "车型",
+                "weight": 0.1
+            },
+            {
+                "keyword": "车流量",
+                "category": "交通状况",
+                "weight": 0.15
+            },
+            {
+                "keyword": "路况",
+                "category": "交通状况",
+                "weight": 0.1
+            }
+        ],
+        "summary": ""
+    },
+    {
+        "keywords": [
+            {
+                "keyword": "反光镜",
+                "category": "服务质量",
+                "weight": 0.6
+            },
+            {
+                "keyword": "不能",
+                "category": "效率",
+                "weight": 0.8
+            },
+            {
+                "keyword": "堵",
+                "category": "效率",
+                "weight": 0.9
+            }
+        ],
+        "summary": ""
+    },
+    {
+        "keywords": [
+            {
+                "keyword": "番海大桥",
+                "category": "基础设施",
+                "weight": 0.8
+            },
+            {
+                "keyword": "堵车",
+                "category": "效率",
+                "weight": 0.9
+            },
+            {
+                "keyword": "红绿灯",
+                "category": "基础设施",
+                "weight": 0.7
+            }
+        ],
+        "summary": ""
+    },
+    {
+        "keywords": [
+            {
+                "keyword": "大雾",
+                "category": "效率",
+                "weight": 0.8
+            },
+            {
+                "keyword": "高速封路",
+                "category": "效率",
+                "weight": 0.75
+            },
+            {
+                "keyword": "堵车",
+                "category": "效率",
+                "weight": 0.7
+            },
+            {
+                "keyword": "航班",
+                "category": "效率",
+                "weight": 0.65
+            },
+            {
+                "keyword": "贵",
+                "category": "成本",
+                "weight": 0.6
+            },
+            {
+                "keyword": "情绪稳定",
+                "category": "满意度",
+                "weight": 0.5
+            }
+        ],
+        "summary": ""
+    }
+]
