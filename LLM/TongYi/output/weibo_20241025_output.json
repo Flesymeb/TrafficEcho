@@ -1,112 +1,100 @@
 [
-    {
-        "keywords": [
-            {
-                "keyword": "洛杉矶",
-                "category": "地理位置",
-                "weight": 0.3
-            },
-            {
-                "keyword": "租车",
-                "category": "交通方式",
-                "weight": 0.2
-            },
-            {
-                "keyword": "FSD",
-                "category": "车辆功能",
-                "weight": 0.15
-            },
-            {
-                "keyword": "Model 3",
-                "category": "车型",
-                "weight": 0.1
-            },
-            {
-                "keyword": "车流量",
-                "category": "交通状况",
-                "weight": 0.15
-            },
-            {
-                "keyword": "路况",
-                "category": "交通状况",
-                "weight": 0.1
-            }
-        ],
-        "summary": ""
-    },
-    {
-        "keywords": [
-            {
-                "keyword": "反光镜",
-                "category": "服务质量",
-                "weight": 0.6
-            },
-            {
-                "keyword": "不能",
-                "category": "效率",
-                "weight": 0.8
-            },
-            {
-                "keyword": "堵",
-                "category": "效率",
-                "weight": 0.9
-            }
-        ],
-        "summary": ""
-    },
-    {
-        "keywords": [
-            {
-                "keyword": "番海大桥",
-                "category": "基础设施",
-                "weight": 0.8
-            },
-            {
-                "keyword": "堵车",
-                "category": "效率",
-                "weight": 0.9
-            },
-            {
-                "keyword": "红绿灯",
-                "category": "基础设施",
-                "weight": 0.7
-            }
-        ],
-        "summary": ""
-    },
-    {
-        "keywords": [
-            {
-                "keyword": "大雾",
-                "category": "效率",
-                "weight": 0.8
-            },
-            {
-                "keyword": "高速封路",
-                "category": "效率",
-                "weight": 0.75
-            },
-            {
-                "keyword": "堵车",
-                "category": "效率",
-                "weight": 0.7
-            },
-            {
-                "keyword": "航班",
-                "category": "效率",
-                "weight": 0.65
-            },
-            {
-                "keyword": "贵",
-                "category": "成本",
-                "weight": 0.6
-            },
-            {
-                "keyword": "情绪稳定",
-                "category": "满意度",
-                "weight": 0.5
-            }
-        ],
-        "summary": ""
-    }
+  {
+    "keywords": [
+      {
+        "keyword": "洛杉矶",
+        "category": "地点",
+        "weight": 0.8
+      },
+      {
+        "keyword": "车流量",
+        "category": "交通状况",
+        "weight": 0.9
+      },
+      {
+        "keyword": "堵车",
+        "category": "交通状况",
+        "weight": 0.9
+      },
+      {
+        "keyword": "适应",
+        "category": "驾驶体验",
+        "weight": 0.7
+      },
+      {
+        "keyword": "北京",
+        "category": "对比地点",
+        "weight": 0.6
+      }
+    ],
+    "score": 88,
+    "sentiment": "正面",
+    "summary": "用户对在美国洛杉矶租车自驾的体验总体上是积极的，尽管初期因车流量大和堵车感到紧张，但很快适应了驾驶环境。与北京相比，洛杉矶的交通状况显得较为简单。"
+  },
+  {
+    "keywords": [
+      {
+        "keyword": "反光镜",
+        "category": "设施损坏",
+        "weight": 0.8
+      },
+      {
+        "keyword": "堵",
+        "category": "交通拥堵",
+        "weight": 0.9
+      }
+    ],
+    "score": 56,
+    "sentiment": "负面",
+    "summary": "用户对因车辆轻微损伤导致的交通堵塞表达了不满，主要关注点在于交通拥堵问题。"
+  },
+  {
+    "keywords": [
+      {
+        "keyword": "番海大桥",
+        "category": "道路",
+        "weight": 0.8
+      },
+      {
+        "keyword": "堵车",
+        "category": "交通状况",
+        "weight": 0.9
+      },
+      {
+        "keyword": "红绿灯",
+        "category": "交通设施",
+        "weight": 0.7
+      }
+    ],
+    "score": 55,
+    "sentiment": "负面",
+    "summary": "用户对番海大桥的交通状况表示不满，主要因为频繁的堵车和红绿灯问题，影响了出行效率。"
+  },
+  {
+    "keywords": [
+      {
+        "keyword": "大雾",
+        "category": "天气因素",
+        "weight": 0.8
+      },
+      {
+        "keyword": "高速封了",
+        "category": "道路状况",
+        "weight": 0.9
+      },
+      {
+        "keyword": "下道堵车",
+        "category": "交通拥堵",
+        "weight": 0.7
+      },
+      {
+        "keyword": "航班",
+        "category": "交通工具",
+        "weight": 0.6
+      }
+    ],
+    "score": 55,
+    "sentiment": "负面",
+    "summary": "用户在出行过程中遇到了大雾导致高速公路封闭和堵车的问题，虽然最终找到了航班，但价格较高。整体情感倾向为负面。"
+  }
 ]
