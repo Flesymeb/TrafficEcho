@@ -4,5 +4,5 @@
 
 - LLM
   大模型分析部分
-- Spyder
+- Spider
   爬虫数据抓取部分
