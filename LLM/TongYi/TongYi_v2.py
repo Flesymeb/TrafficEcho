@@ -2,10 +2,10 @@
 # -*- encoding=utf8 -*-
 
 """
-Description: TongYi_v1.py 单次处理JSON格式的爬虫数据，提取关键词和评价指标，计算出行评价分数。
+Description: TongYi_v2.py 批量处理JSON格式的爬虫数据，提取关键词和评价指标，计算出行评价分数。
 Author: Hyoung Yan
-Created time: 2024-11-23 16:00:52
-Last Modified time: 2024-11-29 14:40:42
+Created time: 2024-11-29 14:39:10
+Last Modified time: 2024-11-29 14:39:57
 """
 
 import json
@@ -16,8 +16,18 @@ from openai import OpenAI
 
 
 class TextAnalyzer:
+    """
+    OpenAI 文本分析类，用于处理 JSON 格式的文本数据，提取关键词和评价指标，计算出行评价分数。
+    """
 
-    def __init__(self, api_key, base_url, input_filename):
+    def __init__(self, api_key, base_url):
+        """
+        OPENAI 文本分析类初始化函数。
+
+        Args:
+            api_key (_type_): apikey, 用于访问 OpenAI 服务。
+            base_url (_type_): OpenAI 服务的基础 URL。
+        """
         try:
             self.client = OpenAI(api_key=api_key, base_url=base_url)
             print("OpenAI client initialized successfully.")
@@ -25,11 +35,20 @@ class TextAnalyzer:
             print(f"初始化OpenAI客户端失败：{e}")
             exit(1)
 
-        self.input_filename = input_filename
-        # 自动生成输出文件名
-        self.output_filename = f"{os.path.splitext(input_filename)[0]}_output.json"
-
     def analyze_text_for_keywords_and_evaluation(self, json_input, index):
+        """
+        分析文本数据，提取关键词和评价指标，计算出行评价分数。
+
+        Args:
+            json_input (_type_): 用户提供的 JSON 格式文本数据。
+            index (_type_): 数据索引，用于标识当前处理的数据。
+
+        Raises:
+            ValueError: 如果 JSON 结构不正确。
+
+        Returns:
+            _type_: 返回包含关键词、情感倾向、总结描述和评分的结果。
+        """
         try:
             prompt = f"""
             用户提供的JSON数据如下：{json_input}
@@ -78,13 +97,22 @@ class TextAnalyzer:
                 raise ValueError(f"Invalid JSON structure for entry {index}")
 
         except Exception as e:
-
             print(
                 f"Error in analyze_text_for_keywords_and_evaluation for entry {index}: {e}"
             )
             return {"error": str(e), "index": index}
 
     def validate_and_process_output(self, json_content, index):
+        """
+        验证 JSON 格式是否正确，并处理输出结果。
+
+        Args:
+            json_content (_type_): json格式的文本数据。
+            index (_type_): 数据索引，用于标识当前处理的数据。
+
+        Returns:
+            _type_: 返回包含关键词、情感倾向、总结描述和评分的结果。
+        """
         try:
             # 验证 JSON 格式是否正确
             data = json.loads(json_content)
@@ -94,6 +122,16 @@ class TextAnalyzer:
             return {"error": f"Invalid JSON format: {e}", "index": index}
 
     def process_output(self, data, index):
+        """
+        处理输出结果，计算出行评价分数。
+
+        Args:
+            data (_type_): json格式的文本数据。
+            index (_type_): 数据索引，用于标识当前处理的数据。
+
+        Returns:
+            _type_: 返回包含关键词、情感倾向、总结描述和评分的结果。
+        """
         keywords = data.get("keywords", [])
         sentiment = data.get("sentiment", "")
         summary_text = data.get("summary", "")
@@ -114,6 +152,16 @@ class TextAnalyzer:
         }
 
     def calculate_score(self, keywords, sentiment):
+        """
+        计算出行评价分数。
+
+        Args:
+            keywords (_type_): 关键词列表，每个关键词包含 keyword, category 和 weight。
+            sentiment (_type_): 情感倾向，正面/负面。
+
+        Returns:
+            _type_: 返回计算出的出行评价分数。
+        """
         base_score = 0  # 初始分数
         total_weight = 0  # 总权重
 
@@ -148,6 +196,13 @@ class TextAnalyzer:
         return score
 
     def log_invalid_response(self, content, index):
+        """
+        记录无效的响应内容到日志文件。
+
+        Args:
+            content (_type_): 日志内容。
+            index (_type_): 数据索引，用于标识当前处理的数据。
+        """
         log_dir = "logs"
         os.makedirs(log_dir, exist_ok=True)
         log_file = os.path.join(log_dir, "invalid_responses.log")
@@ -156,8 +211,16 @@ class TextAnalyzer:
             logfile.write(f"Response:\n{content}\n")
             logfile.write("-" * 80 + "\n")
 
-    def read_json_file(self):
-        file_path = os.path.join("data", self.input_filename)
+    def read_json_file(self, file_path):
+        """
+        读取 JSON 文件内容。
+
+        Args:
+            file_path (_type_): 文件路径。
+
+        Returns:
+            _type_: 返回 JSON 文件内容。
+        """
         try:
             with open(file_path, "r", encoding="utf-8") as file:
                 return json.load(file)
@@ -168,10 +231,17 @@ class TextAnalyzer:
             print(f"Error decoding JSON from file {file_path}: {e}")
             return []
 
-    def append_output_to_json_file(self, entry):
+    def append_output_to_json_file(self, entry, output_filename):
+        """
+        从 JSON 文件中读取数据，追加新的数据，然后写回文件。
+
+        Args:
+            entry (_type_): 文件内容，json格式。
+            output_filename (_type_): 输出文件名。
+        """
         output_dir = "output"
         os.makedirs(output_dir, exist_ok=True)
-        output_path = os.path.join(output_dir, self.output_filename)
+        output_path = os.path.join(output_dir, output_filename)
 
         try:
             # 读取已存在的数据（如果文件不存在则初始化为一个列表）
@@ -193,32 +263,80 @@ class TextAnalyzer:
         except Exception as e:
             print(f"Error writing to file {output_path}: {e}")
 
-    def process_data(self):
-        data = self.read_json_file()
-        if not data:
-            print("No data to process. Exiting.")
+    def process_files(self, folder_path, selected_files):
+        """
+        处理指定文件夹中的 JSON 文件。根据序号选择文件处理，或者处理所有文件。
+
+        Args:
+            folder_path (_type_): 文件夹路径。
+            selected_files (_type_): 选中的文件列表。
+        """
+        all_files = [f for f in os.listdir(folder_path) if f.endswith(".json")]
+        if not all_files:
+            print("No JSON files found in the directory.")
             return
 
-        # 逐条处理数据
-        for index, entry in enumerate(data, start=1):
-            print(f"正在处理第 {index} 条数据...")
-            analysis_result = self.analyze_text_for_keywords_and_evaluation(
-                json.dumps(entry, ensure_ascii=False), index
-            )
-            self.append_output_to_json_file(analysis_result)
-            print(f"第 {index} 条数据已处理并保存到文件。")
-            time.sleep(1)  # 限速，避免触发 API 限制
+        print("请选择一个文件处理：")
+        for idx, filename in enumerate(all_files, 1):
+            print(f"{idx}. {filename}")
+        print(f"{len(all_files) + 1}. 选择全部文件处理")
 
-        print(
-            f"所有数据处理完成！结果已保存到: {os.path.join('output', self.output_filename)}"
-        )
+        choice = int(input("请输入选择的文件序号："))
+
+        if choice == len(all_files) + 1:
+            selected_files = all_files
+        elif 1 <= choice <= len(all_files):
+            selected_files = [all_files[choice - 1]]
+        else:
+            print("无效的选择。")
+            return
+
+        # 逐个处理选中的文件
+        for filename in selected_files:
+            print(f"开始处理文件: {filename}")
+            data = self.read_json_file(os.path.join(folder_path, filename))
+
+            if not data:
+                continue
+
+            for index, entry in enumerate(data, start=1):
+                print(f"正在处理第 {index} 条数据...")
+
+                analysis_result = self.analyze_text_for_keywords_and_evaluation(
+                    json.dumps(entry, ensure_ascii=False), index
+                )
+                self.append_output_to_json_file(analysis_result, f"{filename}_output")
+                print(f"第 {index} 条数据已处理并保存到文件。")
+                time.sleep(1)  # 限速，避免触发 API 限制
+
+            print(f"文件 {filename} 处理完成！结果已保存到 output 文件夹。")
 
 
 # 主程序入口
 if __name__ == "__main__":
+
+    TongYi_Info = {
+        "api_key": "sk-64b850c731f545569c8bf61e3c416324",
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    }
+
     analyzer = TextAnalyzer(
-        api_key="sk-64b850c731f545569c8bf61e3c416324",
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-        input_filename="weibo_20241025.json",
+        api_key=TongYi_Info["api_key"],
+        base_url=TongYi_Info["base_url"],
     )
-    analyzer.process_data()
+
+    # 获取当前工作目录
+    current_dir = os.getcwd()
+
+    # 拼接路径，使用 os.path.join 来避免手动拼接路径字符串
+    # data文件夹
+    # 日期制定，eg. 20241129
+    # 语料库选择，eg. json语料库1
+    folder_path = os.path.join(current_dir, "data", "20241129", "json语料库1")
+
+    # 打印当前工作目录和目标文件夹路径
+    print("当前工作目录:", current_dir)
+    print("数据文件夹路径:", folder_path)
+
+    # 处理数据文件夹
+    analyzer.process_files(folder_path=folder_path, selected_files=[])
