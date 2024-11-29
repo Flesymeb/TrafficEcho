@@ -1,7 +1,6 @@
 import os
 import csv
 import json
-t=[]
 # 指定顶层目录路径
 base_directory = "结果文件"
 
