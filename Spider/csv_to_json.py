@@ -1,11 +1,12 @@
 import os
 import csv
 import json
+
 # 指定顶层目录路径
 base_directory = "结果文件"
 
 # 设置目标列名
-target_columns = [ "微博正文","ip"]
+target_columns = ["微博正文", "ip"]
 
 # 定义 JSON 输出的总目录
 json_output_directory = os.path.join(base_directory, "json")
@@ -30,8 +31,13 @@ for root, dirs, files in os.walk(base_directory):
                     # 提取 IP 和 微博正文
                     ip = row.get("ip", "")  # 如果没有 ip 列或值为空，设置为空字符串
                     content = row.get("微博正文", "").strip()  # 获取微博正文并去掉空格
+
+                    # 跳过以 "【" 开头的微博正文
+                    if content.startswith("【"):
+                        continue
+
                     # 无论 ip 是否为空，都保留记录
-                    json_data.append({ "微博正文": content,"ip": ip})
+                    json_data.append({"微博正文": content, "ip": ip})
 
             # 将数据写入 JSON 文件
             with open(json_file_path, mode='w', encoding='utf-8') as json_file:

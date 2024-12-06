@@ -27,10 +27,10 @@ for root, dirs, files in os.walk(base_directory):
 
                 with open(txt_file_path, mode='w', encoding='utf-8') as txt_file:
                     for index, row in enumerate(csv_reader, start=1):
-                        content = row.get(target_column, "")
-                        if content:  # 确保内容不为空
-                            txt_file.write(f"{index}. {content}\n")
+                        content = row.get(target_column, "").strip()  # 去除空格
+                        if content and not (content.startswith("【")):
+                            txt_file.write(f"{content}\n")
 
             print(f"已处理: {csv_file_path} -> {txt_file_path}")
 
-print("所有微博正文内容已成功提取到txt文件中！")
+print("所有微博正文内容已成功提取到 txt 文件中！")
