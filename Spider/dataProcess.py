@@ -12,9 +12,7 @@ os.makedirs(csv_dir, exist_ok=True)
 os.makedirs(txt_dir, exist_ok=True)
 os.makedirs(json_dir, exist_ok=True)
 
-# 需要保留的列
-keep = ['微博正文', '发布时间', 'ip']
-
+keep = ['微博正文', '发布时间', 'ip'] # 需要保留的
 lim = 200 # 待商榷
 for subdir, dirs, files in os.walk(main_dir):
     for file in files:
