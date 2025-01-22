@@ -4,7 +4,7 @@ import pandas as pd
 main_dir = "结果文件"
 output_dir = "processed_data"
 
-# 输出目录
+# 输出目录：保留原数据，单独创建一个“result”文件夹，分成CSV、TXT和JSON，用在不同需求下。
 csv_dir = os.path.join(output_dir, "CSV")
 txt_dir = os.path.join(output_dir, "TXT")
 json_dir = os.path.join(output_dir, "JSON")
