@@ -19,6 +19,7 @@ keep = ['微博正文', '发布时间', 'ip']
 # 停用词列表
 stopwords = ['招租', '整租', '合租', '租房', '转租', '中介', '装修', '看房','新房','二手房']
 
+
 lim = 200  # 待商榷
 for subdir, dirs, files in os.walk(main_dir):
     for file in files:
