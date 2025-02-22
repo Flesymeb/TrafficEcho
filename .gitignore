@@ -1,4 +1,5 @@
 /node_modules
+/yhy
 package-lock.json
 package.json
 .gitignore
