@@ -1,0 +1,81 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># TrafficEcho 交通情况评估\r\n\r\n## 技术路线\r\n![MethodologyRoute.png](image/README/MethodologyRoute.png)\r\n\r\n\r\n## 讨论记录\r\n\r\n---\r\n\r\n### 新阶段\r\n\r\n---\r\n### 2025.2-2025.3.12\r\n**内容:**\r\n- [x] 1、分类(协商)\r\n- [x] 2、评分(协商)\r\n- [x] 3、权重(协商)\r\n- [x] 4、出分(本质也是协商)\r\n- [x] 5、验证协商机制的有效性 \r\n- [x] 6、写答辩的文档和PPT制作\r\n- [ ] 7、讲故事至今\r\n\r\n### 20250220(19:30腾讯会议)\r\n**要点：**\r\n- 增强模型的推理能力，让一个小参数的模型在微调之后有大参数模型的能力。\r\n- 讲好推理和分类之间的关系，让小参数模型的推理能力更强。\r\n- 打分的权重让大模型协商。\r\n**接下来：**\r\n- 流程跑通（！！！！！ddl开学一周）\r\n- 讲故事告诉大家哪里好？（指标好？模型好？微调好？分类准）\r\n- 提炼出方法论？\r\n- 经费怎么报销？\r\n\r\n### 20250126(21:00腾讯会议)\r\n**一、讨论内容**\\\r\n1、论文交流 \r\n- 指标怎么生成？ 对比学姐文章，先输入原始指标，再给大模型喂一系列关键词，根据新的关键词，检查优化原始指标，得到新的指标库。\r\n- 还可以喂伪数据进行示例供大模型调整。\r\n- 这个过程提示词prompt比较重要。\r\n\r\n2、数据处理，明确有效数据数量。\r\n\r\n3、处理后的语料库，某些搜索词的条数太多，太少的数据量会如何影响分类过程和评价结果？（某种指标的数据太少）\r\n\r\n4、人工标注指标分类。大模型最终对某条数据给出的分类，理论上可能是涉及多个分类的，但这样似乎在检验准确率时不太方便，所以只给出最高相关度的指标类别。\r\n\r\n### 20250121(15:00腾讯会议)\r\n**一、寒假工作：**\r\n- [x] 1、阅读\"LLM+\"和大模型文本分类的相关内容\r\n- [x] 2、年前再进行一次讨论明确上次讨论需要完善的流程上的细节\r\n- [x] 3、尝试跑通部分流程。\r\n- [ ] （最重要）讲出完整的方案和故事\r\n\r\n#### 二、讨论内容：\r\n1、项目**创新点**？\r\n- ***多维度的情感评价，在模糊的评价语言中聚类出清晰的指标，并且能够量化。***\r\n- ***在利用社交媒体数据进行某专业领域的评价时，如果想进行多维度的评价，将文本数据准确分类到不同维度指标上也是值得讨论解决的问题***\r\n\r\n2、我们要解决的是什么问题？为什么一定要用大模型解决？怎么验证基于大模型的解决方案有效？\\\r\n3、为什么你的方案比别人好？为什么要这么微调/协商？和什么方法比？（bert？还是什么？）对业界的贡献是什么？（从头到尾讲好故事）\r\n![img.png](image/README/img.png)\r\n\r\n\r\n### 20250118(21:00腾讯会议)\r\n**一、工作流程：**\r\n- [x] 1、 在服务器上配环境\r\n- [x] 2、\t确定爬虫关键词，爬2023-2024两年的数据\r\n- [x] 3、\t清洗数据（广告、官方号等）-> 有效数据集\r\n- [x] 4、\t将数据集分成不同的类（分类关键词如何生成？一句话中的分类要全面。）\r\n- [x] 5、\t用通义大模型来对每个类别下判断情感极性（要不要标注一部分？）\r\n- [x] 6、\t每个类别下的情感强度 -> 类内每句话有一个针对该类的评分 -> 大类的分\r\n- [x] 7、\t类间权重靠大模型“专家打分”（整个过程中用哪些模型？前后要一致）\r\n\r\n**二、从四篇LLM的论文可以学到的：**\\\r\n1、\t数据增强：正则化等方法\\\r\n2、\t大模型对指标和文献进行分类\\\r\n3、\t提示词的改进\\\r\n4、\t不同的模型之间的“生成对抗”：一个模型来判别，另一个来判断“判断的对不对”\\\r\n5、\t多模型之间的横向对比\r\n\r\n\r\n\r\n### 20241209(通达馆662)\r\n1、根据文献一级二级指标整理分类指标\\\r\n2、指标分界明确，给词聚类\\\r\n3、先分正面、负面、中性（通过提示词）满意度\\\r\n4、不同大模型“专家权重”对比\\\r\n5、bert和大模型的对比优势\r\n\r\n## 实验记录\r\n### 20241202\r\n\r\n- [x] 评分标准简单修改，问题：中性内容范围较广，情感强度\r\n- [x] 评分体系，大模型知识库构建。大模型直接评分还是给定一个复杂些的数学公式\r\n- [x] 先不评分，分类\r\n\r\n### 20241129\r\n\r\n- [x] 爬虫数据批量处理，验证通义千问模型效率及质量，383 条，关键词分类太细\r\n- [x] Token 记录，383 条，消耗 Token 178172，￥ 0.108\r\n- [x] 数据清洗，文本长度，数据有效判断，广告、水军...\r\n- [x] 爬虫 IP 代理池，Cookie\r\n- [x] 评分标准，分类方式\r\n- [x] 上传了 2023 年完整的基于关键词“内环/中环/外环 堵”的数据以供模型测试使用(1201)\r\n\r\n![评价公式](image/README/1732872340405.png)\r\n\r\n### 20241126\r\n\r\n- data 包含两个关键词词库产生的两个语料库，语料库 2 中“驾驶 安全”包含较多广告，若无法处理可删除\r\n\r\n### 20241123\r\n\r\n- 通义千问模型调用实现\r\n- 原始代码上传\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 8bfb49aab55ed85badcde6c712f2ca74fcf6d916)
++++ b/README.md	(date 1741788178927)
+@@ -13,7 +13,7 @@
+ ---
+ ### 2025.2-2025.3.12
+ **内容:**
+-- [x] 1、分类(协商)
++- [x] 1、分类(协商) 
+ - [x] 2、评分(协商)
+ - [x] 3、权重(协商)
+ - [x] 4、出分(本质也是协商)
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"7bae2e05-98fa-4bef-933d-0f2f9e771690\" name=\"Changes\" comment=\"Changes\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/README.md\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/README.md\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FlaskConsoleOptions\" custom-start-script=\"import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass\">\r\n    <envs>\r\n      <env key=\"FLASK_APP\" value=\"app\" />\r\n    </envs>\r\n    <option name=\"myCustomStartScript\" value=\"import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass\" />\r\n    <option name=\"myEnvs\">\r\n      <map>\r\n        <entry key=\"FLASK_APP\" value=\"app\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\"><![CDATA[{\r\n  \"lastFilter\": {\r\n    \"state\": \"OPEN\",\r\n    \"assignee\": \"Flesymeb\"\r\n  }\r\n}]]></component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/Flesymeb/TrafficEcho.git\",\r\n    \"accountId\": \"e04362ae-1849-4af1-a758-850cf5e80db8\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 1\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2qFNrPoFJu9YoKTDqtECcRVi2nm\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"V2.0\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"last_opened_file_path\": \"E:/DeepLearning/TrafficEchoV2.0\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"editor.preferences.fonts.default\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.25659.43\" />\r\n        <option value=\"bundled-python-sdk-181015f7ab06-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.25659.43\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"7bae2e05-98fa-4bef-933d-0f2f9e771690\" name=\"Changes\" comment=\"\" />\r\n      <created>1734254562753</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1734254562753</updated>\r\n      <workItem from=\"1734254564695\" duration=\"11000\" />\r\n      <workItem from=\"1734254593663\" duration=\"395000\" />\r\n      <workItem from=\"1734255040310\" duration=\"162000\" />\r\n      <workItem from=\"1734255272590\" duration=\"46000\" />\r\n      <workItem from=\"1734255331061\" duration=\"6000\" />\r\n      <workItem from=\"1734255346232\" duration=\"235000\" />\r\n      <workItem from=\"1735907348960\" duration=\"1942000\" />\r\n      <workItem from=\"1735918144746\" duration=\"1792000\" />\r\n      <workItem from=\"1735925237628\" duration=\"660000\" />\r\n      <workItem from=\"1736046713607\" duration=\"487000\" />\r\n      <workItem from=\"1741787925826\" duration=\"136000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8bfb49aab55ed85badcde6c712f2ca74fcf6d916)
++++ b/.idea/workspace.xml	(date 1741788178948)
+@@ -4,10 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="7bae2e05-98fa-4bef-933d-0f2f9e771690" name="Changes" comment="Changes">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+-    </list>
++    <list default="true" id="7bae2e05-98fa-4bef-933d-0f2f9e771690" name="Changes" comment="New Session" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -25,6 +22,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="PREVIOUS_COMMIT_AUTHORS">
++      <list>
++        <option value="Hyoung &lt;2864087161@qq.com&gt;" />
++      </list>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+@@ -89,11 +91,25 @@
+       <workItem from="1735918144746" duration="1792000" />
+       <workItem from="1735925237628" duration="660000" />
+       <workItem from="1736046713607" duration="487000" />
+-      <workItem from="1741787925826" duration="136000" />
++      <workItem from="1741787925826" duration="246000" />
+     </task>
++    <task id="LOCAL-00001" summary="New Session">
++      <option name="closed" value="true" />
++      <created>1741788123120</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1741788123120</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Changes" />
++    <MESSAGE value="New Session" />
++    <option name="LAST_COMMIT_MESSAGE" value="New Session" />
++  </component>
+ </project>
+\ No newline at end of file
