@@ -2,7 +2,7 @@
 
 ## 技术路线
 
-![MethodologyRoute.png](image/README/MethodologyRoute.png)
+![MethodologyRoute.png](image/README/method.png)
 
 ## 讨论记录
 
